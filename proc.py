@@ -23,6 +23,8 @@ for k in j:
     types = v['text']['types']
     types = types.replace('☆', '阶级').replace('★', '等级')
     s += types + '\n'
+    if 'pdesc' in v['text'] and len(v['text']['pdesc']) > 0:
+        s += '---\n' + v['text']['pdesc'].replace('\r', '').strip() + '\n---\n'
     s += v['text']['desc'].replace('\r', '')
     with open('cardtext/' + str(v['id']) + '.txt', 'w') as fp:
         fp.write(s)

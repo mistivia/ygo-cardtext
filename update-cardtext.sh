@@ -1,4 +1,6 @@
-wget https://ygocdb.com/api/v0/cards.zip -o cards.zip
+mkdir -p cardtext
+mkdir -p cardtext-fin
+curl https://ygocdb.com/api/v0/cards.zip -o cards.zip
 unzip cards.zip
 rm cards.zip
 python proc.py
